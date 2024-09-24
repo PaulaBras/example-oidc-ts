@@ -11,7 +11,7 @@ This project demonstrates OIDC login functionality using a TypeScript backend (E
 
 1. Clone the repository:
    ```
-   git clone <repository-url>
+   git clone git@git.pabr.de:paul/example-oidc-ts.git
    cd example-oidc-ts
    ```
 
