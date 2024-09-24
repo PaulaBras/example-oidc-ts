@@ -4,8 +4,13 @@ import { getAuthorizationUrl, handleCallback } from '../auth';
 const router = express.Router();
 
 router.get('/login', (req, res) => {
-  const authUrl = getAuthorizationUrl();
-  res.json({ authUrl });
+  try {
+    const authUrl = getAuthorizationUrl();
+    res.json({ authUrl });
+  } catch (error) {
+    console.error('Error getting authorization URL:', error);
+    res.status(500).json({ error: 'Failed to get authorization URL' });
+  }
 });
 
 router.get('/callback', async (req, res) => {
